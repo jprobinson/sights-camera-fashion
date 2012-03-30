@@ -1,0 +1,49 @@
+/*
+Theme Name: sights-camera-fashion
+Author: JP Robinsion
+Author URI: http://JPsLab.copm
+Description: Custom theme for my wife
+Version: 0.1
+*/
+
+
+body {
+    text-align: center;
+}
+
+#wrapper {
+    display: block;
+    border: 1px #000 solid;
+    width:90%;
+    margin:0px auto;
+}
+
+#header {
+    border: 2px #000 solid;
+}
+
+#content {
+    width: 75%;
+    border: 2px #000 solid;
+    float: left;
+}
+
+#sidebar {
+    width: 23%;
+    border: 2px #000 solid;
+    float: right;
+}
+
+#delimiter {
+    clear: both;
+}
+
+#footer {
+    border: 2px #000 solid;
+}
+
+.title {
+    font-size: 11pt;
+    font-family: arial;
+    font-weight: bold;
+}
