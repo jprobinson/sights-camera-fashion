@@ -1,10 +1,11 @@
+
 		<footer id="footer">
-			<h1>This is the footer</h1>
+			<span><?php echo date.format('Y'); ?> &#169; Kelsey Higgins-Robinson</span>
 		</footer>
 
 	</div>
 	
-<?php wp_footer(); ?> 
+ 
 
 </body>
 </html>

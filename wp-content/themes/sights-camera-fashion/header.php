@@ -16,10 +16,12 @@
 
 	<header id="header">
 		<div id="logo">
-			<h1>Sights &bull; Camera &bull; Fashion</h1>
+			<a href="<?php echo site_url(); ?>"><h1>Sights &bull; Camera &bull; Fashion</h1></a>
 		</div>
-		<?php //wp_cumulus_insert(); ?> 
 		
-	<!--	<div style="clear:both;"></div> -->
-		
+		<nav>
+			<ul>
+				<?php wp_list_pages('title_li='); ?>
+			</ul>
+		</nav>
 	</header>

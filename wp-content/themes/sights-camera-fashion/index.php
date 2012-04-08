@@ -4,9 +4,7 @@
 	<div id="content">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<?php $my_date = the_date('', '<h4 class="blog_date">', '</h4>', FALSE); echo $my_date; ?>
-
-			<?php if($my_date != ''){ echo "<hr>"; } ?>
+			<?php the_date('', '<h4 class="blog_date">', '</h4>'); ?>
 			
 			<article class="post">
 				<header>
@@ -18,16 +16,11 @@
 				<footer>
 					<nav class="tags">
 					<?php
-						echo get_the_tag_list('<ul><li class="tag-title">Tags:</li> <li>','</li><li>','</li></ul>');
+						echo get_the_tag_list('<ul><li class="tag-title">Tags:</li><li>','</li><li>','</li></ul>');
 					?>
 					</nav>
-					<div class="comments">
-						<?php 
-						$comments = get_comments('post_id=15');
-						foreach($comments as $comment) :
-							echo($comment->comment_author);
-						endforeach;
-						?>
+					<div class="comment_number">
+						<a class="title" href="<?php the_permalink(); ?>"><?php _e('Comments'); ?>: <?php comments_number('0 :(','1 :|','% :D'); ?></a>
 					</div>
 				</footer>
 			</article>
