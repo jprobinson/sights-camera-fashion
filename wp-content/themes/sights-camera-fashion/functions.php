@@ -4,12 +4,7 @@ if ( ! function_exists( 'scf_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own scf_comment(), and that function will be used instead.
- *
  * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Eleven 1.0
  */
 function scf_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;

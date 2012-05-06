@@ -46,18 +46,11 @@ hr {
 #logo h1 {
 	text-indent:-3000px;
 	white-space:nowrap;
-	margin-top:0;
+	margin:0 auto 0 auto;
 	background:url('img/scf-logo.jpg') no-repeat;
 	height:162px;
-	width:692px;
+	width:348px;
 	display:block;
-}
-
-div[id*="wpcumuluscontent"] {
-	text-align:center;
-	margin:auto;
-	background:url('img/sketch_camera.jpg') no-repeat no-repeat top;
-	float:right;
 }
 
 #main {
@@ -75,14 +68,16 @@ POST STYLE
 */
 
 .blog_date {
-	margin-bottom:0;
+	margin:15px 0 0 0;
 	font-size: .8em;
 	font-style: italic;
+	font:grey;
+	height:2px;
 }
 
 .post {
 	font-color:#000000;
-	margin:10px 0 55px 0;
+	margin:0px 0 55px 0;
 }
 
 .wp-caption {
@@ -124,6 +119,12 @@ img[class^="wp-image"]{
 	list-style:none;
 	padding-left:2px;
 }
+
+.horiz_list li{
+	display:inline;
+	list-style:none;
+}
+
 
 .comment_number {
 	font-size:.8em;
