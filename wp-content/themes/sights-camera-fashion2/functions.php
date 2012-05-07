@@ -21,8 +21,8 @@ function prefix_ajax_get_next_post() {
 		    'numberposts'     => 1,
 		    'offset'          => $_POST['post_offset']);
 		$posts = get_posts($post_args);
-		
-		echo get_scf_post_article($posts[0],$_POST['post_offset']); 
+		if(isset($posts[0]))
+			echo get_scf_post_article($posts[0],$_POST['post_offset']); 
 	}
 	return;
 }
@@ -36,8 +36,8 @@ function prefix_ajax_get_next_thumbnail() {
 		    'numberposts'     => 1,
 		    'offset'          => $_POST['post_offset']);
 		$posts = get_posts($post_args);
-		
-		echo get_scf_thumbnail($posts[0],$_POST['post_offset']); 
+		if(isset($posts[0]))
+			echo get_scf_thumbnail($posts[0],$_POST['post_offset']); 
 	}
 	return;
 }
