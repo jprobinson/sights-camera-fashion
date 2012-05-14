@@ -11,12 +11,14 @@ body {
     text-align: center;
 	font-family: 'Imprima', sans-serif;
 	color:#000000;
-	background-color:#ffffff;
 	width:100%;
 	margin:0;
 	padding:0;
 	position:absolute;
 	top:5px;
+	background:url('img/website_background.png') repeat center;
+	font-family: 'Special Elite', cursive;
+	line-height:1.25em;
 }
 
 a,a:link,a:visited,a:active {
@@ -34,9 +36,8 @@ hr {
 
 #wrapper {
     display: block;
-    /*width:1024px;*/
-	/*height:100%;*/
-	margin:0 auto 0 auto;
+    width:1200px;
+	margin:0;
 	padding:0;
 }
 
@@ -44,7 +45,7 @@ hr {
 	float:left;
 	position:relative;
 	display:block;
-	width:250px;
+	width:175px;
 	text-align:left;
 }
 
@@ -52,18 +53,51 @@ hr {
 #logo h1 {
 	text-indent:-3000px;
 	white-space:nowrap;
-	margin:5px 0 0 5px;
+	margin:10px 20px	;
 	background:url('img/scf-logo.png') no-repeat;
 	height:150px;
 	width:150px;
 	display:block;
 }
 
+
+#home_link{
+	text-indent:-3000px;
+	background:url('img/navigation_home.png') no-repeat center;
+	height:137px;
+	width:91px;
+	display:block;
+	list-style:none;
+	padding:15px 0;
+}
+
+#contact_link{
+	text-indent:-3000px;
+	background:url('img/navigation_contact.png') no-repeat center;
+	height:76px;
+	width:119px;
+	display:block;
+	list-style:none;
+	padding:15px 0;
+	margin-left:-9px;
+}
+
+#about_link{
+	text-indent:-3000px;
+	background:url('img/navigation_about.png') no-repeat center;
+	height:103px;
+	width:115px;
+	display:block;
+	list-style:none;
+	padding:15px 0;
+	margin-left:-24px;
+}
+
 #main {
-	width:80%;
-	min-height:600px;
+	width:1020px;
 	float:left;
 	position:relative;
+	margin:0 0 0 5px;
 }
 
 /* POST CONTAINER */
@@ -71,11 +105,18 @@ hr {
 #post_container{
 	margin-top:15px;
 	display:block;
-	height:515px;
+}
+
+.main_post {
+	margin:0 0 0 10px;
 }
 
 .main_post header{
+	margin:0 0 0 15px;
+	height:19px;
+	padding:0;
 	text-align:left;
+	font-family: 'Stint Ultra Condensed', cursive;
 }
 
 .main_post header h4{
@@ -84,14 +125,42 @@ hr {
 }
 
 .img_container{
+	background-image: url('img/picture-border_top-right.png'), url('img/picture-border_bottom-left.png');
+	background-repeat: no-repeat;
+	background-position: top right, bottom left;
+	padding:12px 11px 8px 14px;
 	float:left;
 }
 
+.img_container img{
+	-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.75);
+}
+
 .text_container {
-	margin:100px 50px 0 25px;
+	margin:auto 0 auto 50px;
+	vertical-align:center;
+	padding:10px 10px;
 	float:left;
-	width:300px;
 	text-align:left;
+	width:300px;
+	font-size: .91em;
+	background-color:rgba(139,137,137,0.25);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.75);
+}
+
+
+.text_container div:first-child {
+	background-image: url('img/picture-text-border.png'), url('img/picture-text-border.png');
+	background-repeat: no-repeat;
+	background-position: top center, bottom center;	
+	padding:12px;
 }
 
 .comment_number{
@@ -120,7 +189,7 @@ hr {
 
 #thumbnail_container {
 	text-align:left;
-	margin:50px 10px 0 10px;
+	margin:25px 10px 0 10px;
 	width:90%;
 	height:160px;
 }
@@ -128,13 +197,14 @@ hr {
 #thumbnail_container ul {
 	width:1100px;
     list-style: none;
-    margin: 0;
+    margin: 0 0 0 -33px;
     padding: 0;
 }
 
 #thumbnail_container li[class~=thumb]{
     width:160px;
 	display:inline-block;
+	margin:10px 0;
 }
 #thumbnail_container li[class~=thumb_button]{
     width:35px;
@@ -144,6 +214,8 @@ hr {
 }
 
 .current_thumb img{
-	margin-bottom:15px;
+	-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.75);
 }
 

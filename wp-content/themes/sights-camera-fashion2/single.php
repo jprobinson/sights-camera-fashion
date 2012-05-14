@@ -1,27 +1,20 @@
 <?php get_header(); ?>
 
 <div id="main">
-	<div id="content">
+	<div id="post_container">
 
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<?php the_date('', '<h4 class="blog_date">', '</h4>'); ?>
+		<?php
+			$post_index = 0;
+			query_posts('showposts=1');
+		 	if (have_posts()) : while (have_posts()) : the_post(); 
+
+
+				get_scf_post_article($post,$post_index);
 			
-			<article class="post">
-				<header>
-					<h2><a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				</header>
 
-				<p><?php the_content(); ?></p>
-				
-				<footer>
-					<nav class="tags">
-					<?php
-						echo get_the_tag_list('<ul><li class="tag-title">Tags:</li> <li>','</li><li>','</li></ul>');
-					?>
-					</nav>
+		
 					
-				
-				<?php comments_template( '/comments.php' ); ?> 
+				 comments_template( '/comments.php' ); ?> 
 				<hr style="border:1px;"/>
 				<?php
 					$fields =  array(
@@ -40,12 +33,8 @@
 					);
 					
 					comment_form($comments_args);
-				?>
-					
-				</footer>
-			</article>
-
-			<?php endwhile; else: ?>
+				$post_index++;
+				 endwhile; else: ?>
 		
 			<p><?php _e('Sorry, we couldn’t find the post you are looking for.'); ?></p>
 

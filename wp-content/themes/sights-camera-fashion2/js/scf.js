@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var post_offset = 5;
+	var post_offset = ($('.thumb').length - 1);
 	var reel_head = 5;
 
 	
@@ -26,9 +26,11 @@ $(document).ready(function() {
 			data:'action=get_next_post&post_offset='+post_offset,
 			success:function (results) {
 				console.log(results);
-				var post_results = results.substring(0,results.length-1);
-				if(post_results != '')
+
+				if(results != ''){
+					var post_results = results.substring(0,results.length-1);
 					$(post_results).insertAfter('#post_'+(post_offset-1));
+				}
 			}
 		});
 	}
@@ -41,8 +43,8 @@ $(document).ready(function() {
 			async:false,
 			data:'action=get_next_thumbnail&post_offset='+post_offset,
 			success:function (results) {
-				var thumb_img = results.substring(0,results.length-1);
-				if(thumb_img != ''){
+				if(results != '-1'){
+					var thumb_img = results.substring(0,results.length-1);
 					var thumb = $(thumb_img);
 					thumb.hide();
 					thumb.insertBefore('#next_thumb');
@@ -96,7 +98,6 @@ $(document).ready(function() {
 		if((reel_head - 5) >= 0){
 			$('#thumb_holder_'+(reel_head+1)).hide();
 			$('#thumb_holder_'+(reel_head - 5)).show();
-			//select_post(parseInt(get_current_post_id())-1);
 		}
 
 	};
@@ -115,4 +116,5 @@ $(document).ready(function() {
 		event.preventDefault();
 		shift_thumbs_right();
 	});
+
 });

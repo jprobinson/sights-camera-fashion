@@ -45,10 +45,13 @@ function prefix_ajax_get_next_thumbnail() {
 function get_scf_thumbnail($post,$thumb_index){
 	if ($thumb_index == 0) { 
 			echo "<li class=\"thumb current_thumb\" id=\"thumb_holder_{$thumb_index}\">";
-	 }	
+	}	
+	else if($thumb_index > 5){  
+		echo "<li class=\"thumb\" style=\"display:none;\" id=\"thumb_holder_{$thumb_index}\">";
+	}
 	else{  
 		echo "<li class=\"thumb\" id=\"thumb_holder_{$thumb_index}\">";
-	 }
+	}
 	echo get_the_post_thumbnail($post->ID,'thumbnail',array());
 	echo "</li>";
 }
@@ -65,15 +68,13 @@ function get_scf_post_article($post,$post_index){
 			echo "<article class=\"main_post\" id=\"post_".$post_index."\" style=\"display:none;\">";
 	 	} 
 
-		echo "<header><h4>".mysql2date('M j, Y',$post->post_date)."</h4>";
-		echo "<h4><a class=\"title\" href=\"". $post->guid."\">". get_the_title($post->ID). "</a></h4></header>";
-		echo "<div class=\"img_container\">";
+		echo "<header><h2>".mysql2date('M j, Y',$post->post_date)."   &#149;  <a class=\"title\" href=\"". $post->guid."\">". get_the_title($post->ID). "</a></h2></header>";
+		echo "<div class=\"img_container\"><a class=\"title\" href=\"". $post->guid."\">";
 		
-		echo wp_get_post_image('height=475&css=scf-main-image&parent_id='.$post->ID);
-		echo "</div>
+		echo wp_get_post_image('height=400&css=scf-main-image&parent_id='.$post->ID);
+		echo "</a></div>
 	
 		<div class=\"text_container\">
-			<header></header>
 			<div>". strip_images($post->post_content) ."<div>
 			
 			<nav class=\"tags\">";
@@ -84,8 +85,6 @@ function get_scf_post_article($post,$post_index){
 			echo "<div class=\"comment_number\">";
 			echo "<a class=\"title\" href=\"". $post->guid ."\">Comments: ". get_comments_number($post->ID) ."</a>";
 			echo "</div>						
-
-			<footer></footer>
 		</div>
 	
 		<footer>
