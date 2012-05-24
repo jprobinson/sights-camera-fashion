@@ -13,7 +13,7 @@ $(document).ready(function() {
 	};
 	
 	var click_thumbnail = function(thumbnail){
-		var thumb_id = $(thumbnail).prop('id');
+		var thumb_id = $(thumbnail).prop("id");
 		var post_id = thumb_id.replace("thumb_holder_","");
 		select_post(post_id);
 	};
@@ -101,6 +101,8 @@ $(document).ready(function() {
 		}
 
 	};
+	
+	
 	
 	//CLICKED THUMBNAIL
 	$('.thumb').click(function(){ click_thumbnail(this); });

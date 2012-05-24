@@ -34,6 +34,11 @@ hr {
 	margin:5px 0 5px 0;
 }
 
+ul {
+	margin:0;
+	padding:0;
+}
+
 #wrapper {
     display: block;
     width:1200px;
@@ -49,17 +54,28 @@ hr {
 	text-align:left;
 }
 
+#logo h1:hover {
+	background:url('img/scf-logo.png') no-repeat;
+}
 
 #logo h1 {
 	text-indent:-3000px;
 	white-space:nowrap;
-	margin:10px 20px	;
+	margin:20px 20px	;
 	background:url('img/scf-logo.png') no-repeat;
 	height:150px;
 	width:150px;
 	display:block;
 }
 
+#pages_links {
+	padding-left:0;
+	margin:-20px 0 0 -20px;
+}
+
+#home_link:hover{
+	background:url('img/navigation_home_hover.png') no-repeat center;
+}
 
 #home_link{
 	text-indent:-3000px;
@@ -68,7 +84,14 @@ hr {
 	width:91px;
 	display:block;
 	list-style:none;
-	padding:15px 0;
+	padding:0 0 15px 0;
+	margin:auto;
+}
+
+#contact_link:hover{
+	background:url('img/navigation_contact_hover.png') no-repeat center;
+	padding:58px 0 0 0;
+	margin:auto auto auto 39px;
 }
 
 #contact_link{
@@ -78,8 +101,13 @@ hr {
 	width:119px;
 	display:block;
 	list-style:none;
-	padding:15px 0;
-	margin-left:-9px;
+	padding:30px 0;
+	margin:auto;
+}
+
+#about_link:hover{
+	background:url('img/navigation_about_hover.png') no-repeat center;
+	margin:-6px auto 6px auto;
 }
 
 #about_link{
@@ -89,8 +117,8 @@ hr {
 	width:115px;
 	display:block;
 	list-style:none;
-	padding:15px 0;
-	margin-left:-24px;
+	padding:0 0 0 15px;
+	margin:auto;
 }
 
 #main {
@@ -124,7 +152,7 @@ hr {
 	padding:0;
 }
 
-.img_container{
+.img_container {
 	background-image: url('img/picture-border_top-right.png'), url('img/picture-border_bottom-left.png');
 	background-repeat: no-repeat;
 	background-position: top right, bottom left;
@@ -181,6 +209,36 @@ hr {
 	display:inline;
 	list-style:none;
 	padding-right:8px;
+}
+
+.next_post {
+	display:block;
+	position:absolute;
+	top:0;
+	right:0;
+	height:100%;
+	width:35%;
+}
+
+.next_post:hover span {
+	background-image: url('img/scf.png');
+	background-repeat: no-repeat;
+	background-position: -40px -60px;
+}
+
+.prev_post {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:35%;
+}
+
+.prev_post:hover span{
+	background-image: url('img/scf.png');
+	background-repeat: no-repeat;
+	background-position: -40px -20px;
 }
 
 

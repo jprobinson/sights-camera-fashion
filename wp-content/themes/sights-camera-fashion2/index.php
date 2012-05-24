@@ -2,6 +2,7 @@
 
 	<div id="main">
 		<div id="post_container">
+			<a href="#" class="prev_post"><span>Prev</span></a>
 
 			<?php
 				$post_index = 0;
@@ -18,7 +19,8 @@
 				<p><?php _e('Sorry, we couldn’t find the post you are looking for.'); ?></p>
 
 			<?php endif; ?>
-		
+			
+			<a href="#" class="next_post"><span>Next</span></a>
 		</div>
 		
 		<div style="clear:both;"></div>
