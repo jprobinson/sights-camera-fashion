@@ -6,20 +6,24 @@ Description: Custom theme for my wife
 Version: 0.1
 */
 
-
 body {
     text-align: center;
-	font-family: 'Imprima', sans-serif;
+	font-family: 'Anonymous Pro', sans-serif;
 	color:#000000;
-	width:100%;
 	margin:0;
 	padding:0;
+	width:100%;
 	position:absolute;
-	top:5px;
-	background:url('img/website_background.png') repeat center;
-	font-family: 'Special Elite', cursive;
+	top:0;
+	left:0;
 	line-height:1.25em;
 }
+
+#wrapper{
+	margin:auto;
+	max-width:960px;
+}
+
 
 a,a:link,a:visited,a:active {
 	text-decoration:none;
@@ -39,38 +43,35 @@ ul {
 	padding:0;
 }
 
-#wrapper {
-    display: block;
-    width:1200px;
-	margin:0;
-	padding:0;
-}
-
 #header {
-	float:left;
-	position:relative;
 	display:block;
-	width:175px;
-	text-align:left;
+	width:500px;
+	margin:auto;
+	text-align:center;
 }
 
-#logo h1:hover {
-	background:url('img/scf-logo.png') no-repeat;
+#logo {
+	margin-bottom:32px;
 }
 
-#logo h1 {
+#logo a{
 	text-indent:-3000px;
-	white-space:nowrap;
-	margin:20px 20px	;
-	background:url('img/scf-logo.png') no-repeat;
-	height:150px;
-	width:150px;
+	background:url('img/blog_logo.png') no-repeat center;
+	height:40px;
+	width:359px;
 	display:block;
+	padding:0 0 0 0;
+	margin:0 auto 5px auto;
 }
 
 #pages_links {
 	padding-left:0;
 	margin:-20px 0 0 -20px;
+	height:90px;
+}
+
+#pages_links ul li {
+	display:inline-block;
 }
 
 #home_link:hover{
@@ -80,71 +81,83 @@ ul {
 #home_link{
 	text-indent:-3000px;
 	background:url('img/navigation_home.png') no-repeat center;
-	height:137px;
+	height:90px;
 	width:91px;
 	display:block;
 	list-style:none;
-	padding:0 0 15px 0;
+	padding:0 0 0 0;
 	margin:auto;
 }
 
 #contact_link:hover{
 	background:url('img/navigation_contact_hover.png') no-repeat center;
-	padding:58px 0 0 0;
-	margin:auto auto auto 39px;
+	height:123px;
 }
 
 #contact_link{
 	text-indent:-3000px;
 	background:url('img/navigation_contact.png') no-repeat center;
-	height:76px;
-	width:119px;
+	height:125px;
+	width:94px;
 	display:block;
 	list-style:none;
-	padding:30px 0;
+	padding:0;
 	margin:auto;
 }
 
 #about_link:hover{
 	background:url('img/navigation_about_hover.png') no-repeat center;
-	margin:-6px auto 6px auto;
+	height:103px;
 }
 
 #about_link{
 	text-indent:-3000px;
 	background:url('img/navigation_about.png') no-repeat center;
-	height:103px;
+	height:111px;
 	width:115px;
 	display:block;
 	list-style:none;
-	padding:0 0 0 15px;
+	padding:0 0 0 0;
 	margin:auto;
-}
-
-#main {
-	width:1020px;
-	float:left;
-	position:relative;
-	margin:0 0 0 5px;
 }
 
 /* POST CONTAINER */
 
+#single_post_container{
+	text-align:left;
+	width:860px;
+	margin:0 auto;
+}
+
+#pages_container{
+	text-align:left;
+	padding-top:45px;
+	max-width:800px;
+	min-width:400px;
+	margin:0 auto;
+}
+
+
 #post_container{
-	margin-top:15px;
 	display:block;
+	float:left;
+	width:640px;
+}
+
+#disqus_thread{
+	margin:0 5px 0 5px;
 }
 
 .main_post {
-	margin:0 0 0 10px;
+	margin:0 0 0 0;
 }
 
 .main_post header{
-	margin:0 0 0 15px;
-	height:19px;
+	margin:0;
+	height:40px;
 	padding:0;
 	text-align:left;
-	font-family: 'Stint Ultra Condensed', cursive;
+
 }
 
 .main_post header h4{
@@ -153,52 +166,73 @@ ul {
 }
 
 .img_container {
-	background-image: url('img/picture-border_top-right.png'), url('img/picture-border_bottom-left.png');
-	background-repeat: no-repeat;
-	background-position: top right, bottom left;
-	padding:12px 11px 8px 14px;
-	float:left;
+	width:600px;
 }
 
+.single_img_container img,
 .img_container img{
-	-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.75);
-	box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.75);
+	border:1px solid black;
+	padding:10px;
+}
+
+#single_post_container article header {
+	margin-left:20px;
+}
+
+.single_post_content{
+	text-align:left;
+	margin-left:6px;
+}
+
+.single_post_content div:nth-child(2){
+	margin:10px 0;
 }
 
 .text_container {
-	margin:auto 0 auto 50px;
-	vertical-align:center;
-	padding:10px 10px;
-	float:left;
-	text-align:left;
-	width:300px;
-	font-size: .91em;
-	background-color:rgba(139,137,137,0.25);
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.75);
-	box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.75);
-}
-
-
-.text_container div:first-child {
-	background-image: url('img/picture-text-border.png'), url('img/picture-text-border.png');
-	background-repeat: no-repeat;
-	background-position: top center, bottom center;	
-	padding:12px;
+	text-align:left !important;
 }
 
 .comment_number{
-	padding-top:10px;
+	vertical-align: top;
+	background: url('img/comments-icon.png') no-repeat center;
+	height: 40px;
+	width: 30px;
+	text-align: center !important;
+	display: inline-block;
+	padding: 0 0 0 0;
+	margin: 0;
+}
+
+.comment_number a {
+	height: 16px;
+	display: block;
+	padding-top: 10px;
+	padding-left: 7px;
+	font-size: .75em;
+}
+
+.location_link {
+	float:right;
+	margin-right:15px;
+	vertical-align:top;
+	display:inline-block;
+}
+.location_link a {		
+	text-indent:-3000px;
+	background:url('img/location-icon.png') no-repeat center;
+	height:34px;
+	width:34px;
+	display:inline-block;
+	padding:0 0 0 0;
+	margin:0;	
 }
 
 .tags{
+	vertical-align:top;
+	display:block;
 	font-size:.7em;
 	margin:0;
-	padding:0;
+	padding:10px 0 0 0;
 }
 
 .tags ul {
@@ -211,51 +245,33 @@ ul {
 	padding-right:8px;
 }
 
+.post_nav {
+	padding-top:20px;
+}
+.post_nav a {
+	display:inline-block;
+	width:48%;
+}
+
 .next_post {
-	display:block;
-	position:absolute;
-	top:0;
-	right:0;
-	height:100%;
-	width:35%;
-}
-
-.next_post:hover span {
-	background-image: url('img/scf.png');
-	background-repeat: no-repeat;
-	background-position: -40px -60px;
-}
-
-.prev_post {
-	display:block;
-	position:absolute;
-	top:0;
-	left:0;
-	height:100%;
-	width:35%;
-}
-
-.prev_post:hover span{
-	background-image: url('img/scf.png');
-	background-repeat: no-repeat;
-	background-position: -40px -20px;
+	text-align:right;
 }
 
 
 /*THUMBAILS*/
-
+#thumb_nav{
+	float:left;
+	width:320px;
+}
 
 #thumbnail_container {
 	text-align:left;
-	margin:25px 10px 0 10px;
-	width:90%;
-	height:160px;
+	margin:49px 0 0 0;
 }
 
 #thumbnail_container ul {
-	width:1100px;
     list-style: none;
-    margin: 0 0 0 -33px;
+    margin: 0;
     padding: 0;
 }
 
@@ -264,16 +280,57 @@ ul {
 	display:inline-block;
 	margin:10px 0;
 }
-#thumbnail_container li[class~=thumb_button]{
-    width:35px;
-	display:inline-block;
-	position:relative;
-	top:-45px;
+
+#thumbnail_container li[class~=thumb]:hover img{
+    box-shadow: 3px 2px 30px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 3px 2px 30px rgba(0, 0, 0, 0.63);
+    -webkit-box-shadow: 3px 2px 30px rgba(0, 0, 0, 0.63);
 }
 
 .current_thumb img{
-	-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.75);
-	box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.75);
+    box-shadow: 3px 2px 30px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 3px 2px 30px rgba(0, 0, 0, 0.63);
+    -webkit-box-shadow: 3px 2px 30px rgba(0, 0, 0, 0.63);
+	border: 2px solid #000;
 }
 
+.thumb_action{
+	display:inline-block;
+}
+.thumb_action a {
+	text-indent:-3000px;
+	display:inline-block;
+}
+
+#next_thumb {
+	text-indent:-3000px;
+	background:url('img/right-arrow.png') no-repeat center;
+	height:25px;
+	width:100px;
+	padding:0;
+	margin:0;
+}
+
+#prev_thumb {
+	text-indent:-3000px;
+	background:url('img/left-arrow.png') no-repeat center;
+	height:25px;
+	width:100px;
+	padding:0;
+	margin:0;
+}
+
+ul[id^=thumb_page_]{
+	height:350px;
+}
+
+.alignright{
+	float:right;
+	clear:left;
+	padding:10px;
+}
+.alignleft{
+	float:left;
+	clear:right;
+	padding:10px;
+}

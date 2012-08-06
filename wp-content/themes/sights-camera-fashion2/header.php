@@ -6,10 +6,9 @@
 		<title>Sights Camera Fashion - A Blog by Kelsey Higgins-Robinson</title>
 		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-		<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Stint+Ultra+Condensed' rel='stylesheet' type='text/css'>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	    <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700' rel='stylesheet' type='text/css'>
+	    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/scf.js"></script>
 
@@ -17,12 +16,10 @@
 	</head>
 
 <body>
-
-<div id="wrapper">
-
+    <div id="wrapper">
 	<header id="header">
 		<div id="logo">
-			<a href="<?php echo site_url(); ?>"><h1>Sights &bull; Camera &bull; Fashion</h1></a>
+			<a href="<?php echo site_url(); ?>"><h1>Sights [ Camera ] Fashion</h1></a>
 		</div>
 
 		<nav id="pages_links">
@@ -39,3 +36,4 @@
 			</ul>
 		</nav>
 	</header>
+    

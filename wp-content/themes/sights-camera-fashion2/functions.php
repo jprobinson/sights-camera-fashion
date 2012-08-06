@@ -46,14 +46,11 @@ function get_scf_thumbnail($post,$thumb_index){
 	if ($thumb_index == 0) { 
 			echo "<li class=\"thumb current_thumb\" id=\"thumb_holder_{$thumb_index}\" data-postid=\"{$thumb_index}\" >";
 	}	
-	else if($thumb_index > 5){  
-		echo "<li class=\"thumb\" style=\"display:none;\" id=\"thumb_holder_{$thumb_index}\" data-postid=\"{$thumb_index}\" >";
-	}
 	else{  
-		echo "<li class=\"thumb\" id=\"thumb_holder_{$thumb_index}\">";
+		echo "<li class=\"thumb\" id=\"thumb_holder_{$thumb_index}\" data-postid=\"{$thumb_index}\">";
 	}
 
-	echo get_the_post_thumbnail($post->ID,'thumbnail',array());
+	echo get_the_post_thumbnail($post->ID,array(150,150),array());
 	echo "</li>";
 }
 
@@ -69,81 +66,53 @@ function get_scf_post_article($post,$post_index){
 			echo "<article class=\"main_post\" id=\"post_{$post_index}\" data-post-id=\"{$post_index}\" style=\"display:none;\">";
 	 	} 
 
-		echo "<header><h2>".mysql2date('M j, Y',$post->post_date)."   &#149;  <a class=\"title\" href=\"". $post->guid."\">". get_the_title($post->ID). "</a></h2></header>";
+		echo "<header><h3>".mysql2date('M j, Y',$post->post_date)."   <br/>  <a class=\"title\" href=\"". $post->guid."\">". get_the_title($post->ID). "</a></h3></header>";
 		
 		echo "<div class=\"img_container\"><a class=\"title\" href=\"". $post->guid."\">";
 		
 		echo wp_get_post_image('height=400&css=scf-main-image&parent_id='.$post->ID);
 		echo "</a></div>
-	
-		<div class=\"text_container\">
-			<div>". strip_images($post->post_content) ."<div>
-			
-			<nav class=\"tags\">";
-
-			echo get_the_tag_list('<ul><li class="tag-title">Tags:</li><li>','</li><li>','</li></ul>');
-			
-			echo"</nav>";
-			echo "<div class=\"comment_number\">";
-			echo "<a class=\"title\" href=\"". $post->guid ."\">Comments: ". get_comments_number($post->ID) ."</a>";
-			echo "</div>						
-		</div>
-		<footer>
-	
-		</footer>
-	</article> ";
+	    	<div class=\"text_container\">
+    		    <div class=\"comment_number\">";
+    			    echo "<a class=\"title\" href=\"". $post->guid ."\">". get_comments_number($post->ID) ."</a>";
+    			echo "</div>
+		    
+    			<div class=\"location_link\">". strip_images($post->post_content) ."</div>";
+                // <nav class=\"tags\">";
+                // 
+                // echo get_the_tag_list('<ul><li class="tag-title"></li><li>',',</li><li>','</li></ul>');
+                //          
+                // echo"</nav>
+				
+    	   echo" </div>
+        	</article> ";
 
 	
 }
 
 
+function get_scf_single_post_article($post,$post_index){
 
-if ( ! function_exists( 'scf_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- */
-function scf_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-	?>
-	<li class="post pingback">
-		<p><?php _e( 'Pingback:' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?></p>
-	<?php
-			break;
-		default :
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header class="comment-meta">
-				<div class="comment-author">
-					
-					<p><span class="comment-author-name"><?php echo get_comment_author(); ?></span> / <?php echo get_comment_date() . ' @  ' . get_comment_time(); ?>:</p>
+		echo "<article class=\"main_post\" id=\"post_{$post_index}\" data-post-id=\"{$post_index}\" >";
 
-					<?php edit_comment_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-				</div><!-- .comment-author  -->
+		echo "<header><h1>".mysql2date('M j, Y',$post->post_date)." - <a class=\"title\" href=\"". $post->guid."\">". get_the_title($post->ID). "</a></h1></header>";
+		
+		echo "<div class=\"single_img_container\">";
+		
+		echo wp_get_post_image('height=550&css=scf-main-image&parent_id='.$post->ID);
+			echo "</div>
+    	    	<div class=\"single_post_content\">
+        			<div class=\"location_link\">". strip_images($post->post_content) ."</div>
+                    <div>";
+        			    echo strip_images(preg_replace('/<a[^>]+>([^<]+)<\/a>/i','\1',$post->post_content))."
+        	        </div>
 
-				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
-					<br />
-				<?php endif; ?>
+        			<nav class=\"tags\">";
 
-			</header>
+        			echo get_the_tag_list('<ul><li class="tag-title">Tagged:</li><li>',',</li><li>','</li></ul>');
 
-			<div class="comment-content"><?php comment_text(); ?></div>
-
-			<footer class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</footer><!-- .reply -->
-		</article><!-- #comment-## -->
-		<hr/>
-	<?php
-			break;
-	endswitch;
+        			echo"</nav></div>
+            	</article> ";
 }
-endif; // ends check for scf_comment()
 
 ?>
