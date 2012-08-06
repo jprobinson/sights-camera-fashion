@@ -13,6 +13,7 @@ function strip_images($content){
 *
 */
 add_action('wp_ajax_get_next_post', 'prefix_ajax_get_next_post');
+add_action('wp_ajax_nopriv_get_next_post', 'prefix_ajax_get_next_post');
 
 function prefix_ajax_get_next_post() {
 	
@@ -28,14 +29,15 @@ function prefix_ajax_get_next_post() {
 }
 
 add_action('wp_ajax_get_next_thumbnail', 'prefix_ajax_get_next_thumbnail');
+add_action('wp_ajax_nopriv_get_next_thumbnail', 'prefix_ajax_get_next_thumbnail');
 
 function prefix_ajax_get_next_thumbnail() {
-	
 	if(isset($_POST['post_offset'])){
 		$post_args = array(
 		    'numberposts'     => 1,
 		    'offset'          => $_POST['post_offset']);
 		$posts = get_posts($post_args);
+		error_log(var_export($posts,'true'));
 		if(isset($posts[0]))
 			echo get_scf_thumbnail($posts[0],$_POST['post_offset']); 
 	}
@@ -78,11 +80,6 @@ function get_scf_post_article($post,$post_index){
     			echo "</div>
 		    
     			<div class=\"location_link\">". strip_images($post->post_content) ."</div>";
-                // <nav class=\"tags\">";
-                // 
-                // echo get_the_tag_list('<ul><li class="tag-title"></li><li>',',</li><li>','</li></ul>');
-                //          
-                // echo"</nav>
 				
     	   echo" </div>
         	</article> ";

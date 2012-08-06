@@ -8,7 +8,7 @@ Version: 0.1
 
 body {
     text-align: center;
-	font-family: 'Anonymous Pro', sans-serif;
+	font-family:'Metrophobic', sans-serif;
 	color:#000000;
 	margin:0;
 	padding:0;
@@ -296,6 +296,7 @@ ul {
 
 .thumb_action{
 	display:inline-block;
+	margin: 0 14px 0 0;
 }
 .thumb_action a {
 	text-indent:-3000px;
